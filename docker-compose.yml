@@ -1,0 +1,11 @@
+version: 'latest'
+services:
+  web:
+    image:  httpd:latest
+    container_name: meu-container
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./server.crt:/usr/local/apache2/conf/server.crt
+      - ./server.key:/usr/local/apache2/conf/server.key
